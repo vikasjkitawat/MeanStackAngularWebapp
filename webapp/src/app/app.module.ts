@@ -3,10 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { EshopComponent } from './components/eshop/eshop.component';
+import { ProductlistComponent } from './components/productlist/productlist.component';
+import { ProductentryComponent } from './components/productentry/productentry.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EshopComponent,
+    ProductlistComponent,
+    ProductentryComponent
   ],
   imports: [
     BrowserModule,
@@ -14,5 +20,6 @@ import { AppComponent } from './app.component';
   ],
   //providers: [], // Service Layer
   bootstrap: [AppComponent] // new AppComponent()
+  //bootstrap: [AppComponent, EshopComponent] // new AppComponent()
 })
 export class AppModule { }

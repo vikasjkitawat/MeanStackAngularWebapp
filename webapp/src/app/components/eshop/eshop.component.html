@@ -1,0 +1,6 @@
+<h2>EShop</h2>
+
+
+<!-- (onProductAdd) tells that it is subscribed to the onProductAdd function and fetch the output value -->
+<app-productentry (onProductAdd)="addProduct($event)"></app-productentry>
+<app-productlist [products]="EShopInventory"></app-productlist>

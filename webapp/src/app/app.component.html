@@ -21,6 +21,7 @@
 <!-- Directive => [(ngModel))] -->
 <!-- Need to import in app.module.ts -->
 <!-- Similar to above -->
+<h2>ngModel Directive</h2>
 <div>
     <span>Name: </span>
     <input type="text" [(ngModel)]="userName" /> 
@@ -29,6 +30,7 @@
 
 <!-- [(ngModel)] => value based directive
 *ngFor =>  Structural Directive -->
+<h2>Structural Directive</h2>
 <ul>
     <li *ngFor="let point of dataPoints">
         {{point}}
@@ -46,3 +48,17 @@
         </li>
     </ul>
 </div>
+
+
+<div *ngIf="dataPoints.length > 0">
+    <div>
+        <h2>Output</h2>
+    </div>
+    <!-- Conditional construct -->
+    <ul>
+        <li *ngFor="let i = $index">
+            {{i}}
+        </li>
+    </ul>
+</div>
+<app-eshop></app-eshop>
