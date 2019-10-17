@@ -1,4 +1,7 @@
-<ng-content></ng-content>
+<!-- <ng-content></ng-content> -->
+<ng-content select="header">
+
+</ng-content>
 
 <table *ngIf="products.length > 0">
     <thead>
@@ -16,3 +19,9 @@
         </tr>
     </tbody>
 </table>
+
+
+<ng-content select="footer"></ng-content>
+<ng-content select="div[id='div1']"></ng-content>
+<ng-content select="div[id='div2']"></ng-content>
+
