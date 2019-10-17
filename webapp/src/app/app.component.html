@@ -2,7 +2,7 @@
     {{appName}}<!-- Inner HTML -->
 </h1>
 
-<button (click)="handleClick()">
+<button (click)="handleClick()"> <!-- Event -->
     Update
 </button>
 <span>
@@ -11,3 +11,20 @@
 
 <h2>Sample h2 code</h2>
 
+<!-- input element -->
+
+<div>
+    <span>Name: </span>
+    <input type="text" [value]="userName" (input)="handleUserNameChange($event)">
+    <span>Updated Name: {{userName}}</span>
+</div>
+
+
+<!-- Directive => [(ngModel))] -->
+<!-- Need to import in app.module.ts -->
+<!-- Similar to above -->
+<div>
+    <span>Name: </span>
+    <input type="text" [(ngModel)]="userName" /> 
+    <span>Updated Name: {{userName}}</span>
+</div>

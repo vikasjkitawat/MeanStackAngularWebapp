@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { timingSafeEqual } from 'crypto';
+// import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-root', // Tag Name
@@ -20,6 +20,7 @@ export class AppComponent { // View Model (TS > JS Objects)
   protected dataPoints : number[];
   protected showNotification : boolean;
   protected autoNumber : number;
+  protected userName : string;
   //handleClick : () => void;
   
   constructor()
@@ -29,6 +30,7 @@ export class AppComponent { // View Model (TS > JS Objects)
     this.dataPoints = [100, 200, 300];
     this.showNotification = true;
     this.autoNumber = 0;
+    this.userName = "Max";
 
 
     // Below is also valid - function will be created for every instance
@@ -43,5 +45,11 @@ export class AppComponent { // View Model (TS > JS Objects)
   handleClick() //AppComponent.prototype.handleClick
   {
     this.autoNumber++;
+  }
+
+  handleUserNameChange(event)
+  {
+    this.userName = event.target.value;
+    //alert(this.userName);
   }
 }
