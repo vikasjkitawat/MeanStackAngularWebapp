@@ -16,3 +16,31 @@ To generate a component using CLI
 Syntax : ng generate component <Component base folder>/<Component name>
 e.g. to create eshop :
 ng generate component components/eshop
+
+
+
+## ngZone
+
+## monkey patching
+
+```//http://collabedit.com/9xr4d
+
+var fn = document.body.addEventListener;
+
+document.body.addEventListener = function(eventName,eventCb) {
+  
+    function monkeyPatched()
+    {
+        console.log("Hacked");
+        eventCb();
+    }
+  
+    fn(eventName,monkeyPatched);
+};
+
+document.body.addEventListener(
+    "click", 
+    function() { console.log("Clicked") }
+    );
+
+```
