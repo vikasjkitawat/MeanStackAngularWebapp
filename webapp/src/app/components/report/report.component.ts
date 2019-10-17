@@ -23,6 +23,7 @@ export class ReportComponent implements OnInit
   //     );
   // }
 
+  // this._ChangeDetectorRef we forcefully tell the contructor (dependency injection) to update the changes
   constructor(private _ChangeDetectorRef : ChangeDetectorRef)
   {
     this.cdCount = 1;
