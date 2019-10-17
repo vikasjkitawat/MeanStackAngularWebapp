@@ -9,8 +9,6 @@
     {{autoNumber}}
 </span>
 
-<h2>Sample h2 code</h2>
-
 <!-- input element -->
 
 <div>
@@ -28,3 +26,11 @@
     <input type="text" [(ngModel)]="userName" /> 
     <span>Updated Name: {{userName}}</span>
 </div>
+
+<!-- [(ngModel)] => value based directive
+*ngFor =>  Structural Directive -->
+<ul>
+    <li *ngFor="let point of dataPoints">
+        {{point}}
+    </li>
+</ul>
