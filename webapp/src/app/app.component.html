@@ -34,3 +34,15 @@
         {{point}}
     </li>
 </ul>
+
+<div *ngIf="dataPoints2.length > 0">
+    <div>
+        <h2>Conditional construct</h2>
+    </div>
+    <!-- Conditional construct -->
+    <ul>
+        <li *ngFor="let point of dataPoints2">
+            {{point}}
+        </li>
+    </ul>
+</div>

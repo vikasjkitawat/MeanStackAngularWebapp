@@ -21,6 +21,7 @@ export class AppComponent { // View Model (TS > JS Objects)
   protected showNotification : boolean;
   protected autoNumber : number;
   protected userName : string;
+  protected dataPoints2 : number[];
   //handleClick : () => void;
   
   constructor()
@@ -31,6 +32,7 @@ export class AppComponent { // View Model (TS > JS Objects)
     this.showNotification = true;
     this.autoNumber = 0;
     this.userName = "Max";
+    this.dataPoints2 = [];
 
 
     // Below is also valid - function will be created for every instance
