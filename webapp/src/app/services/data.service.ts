@@ -98,10 +98,10 @@ export class DataService
                     (data: Product) => // NEXT (similar to Try) - Success
                     {
                         this.ProductInventory.push(data);
-                        var result = [
-                            ...this.ProductInventory
-                        ];
-                        resolve(result);
+                        // var result = [
+                        //     ...this.ProductInventory
+                        // ];
+                        resolve(data);
                     },
                     (error) => // Error (similar to Catch)
                     {

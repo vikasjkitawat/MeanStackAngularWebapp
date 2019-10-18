@@ -13,8 +13,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ReportComponent implements OnInit
 {
-  cdCount: number;
-
+  cdCount : number;
+  timerId : number;
 
   // constructor()
   // {
@@ -35,7 +35,7 @@ export class ReportComponent implements OnInit
     this.cdCount = 1;
     console.log('Report comp : ' + this._dataService.getServiceId());
 
-    setInterval(
+    this.timerId = window.setInterval(
       ()=>
       {
         this.updateCDCount(); 
@@ -48,6 +48,12 @@ export class ReportComponent implements OnInit
 
   ngOnInit()
   {
+  }
+
+  //Destructor (c# Dispose)
+  ngOnDestroy()
+  {
+    clearInterval(this.timerId);
   }
 
   updateCDCount()

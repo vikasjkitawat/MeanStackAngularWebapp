@@ -32,18 +32,18 @@ export class EshopComponent implements OnInit
 
     //OPTION 3: USING REST API
     this.EShopInventory = [];
-    var promise = dataService.getProducts();
+    // var promise = dataService.getProducts();
 
-    promise.then(
-      (products: Product[]) => // success
-      {
-        this.EShopInventory = products;
-      },
-      (errorMessage: string) => // error
-      {
-        alert(errorMessage);
-      }
-    )
+    // promise.then(
+    //   (products: Product[]) => // success
+    //   {
+    //     this.EShopInventory = products;
+    //   },
+    //   (errorMessage: string) => // error
+    //   {
+    //     alert(errorMessage);
+    //   }
+    // )
   }
 
   ngOnInit()

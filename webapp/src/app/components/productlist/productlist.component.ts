@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Product } from '../../models/product';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-productlist',
@@ -10,17 +11,32 @@ import { Product } from '../../models/product';
   // happen when a new object is created
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductlistComponent implements OnInit {
+export class ProductlistComponent implements OnInit
+{
 
   // Type declarations
   // Decorators - @Input() => used to tell that we will import from out
-  @Input() products: Product[]
+  // @Input() products: Product[]
+  products: Product[]
 
-  constructor() {
-    this.products = [];
+  constructor(private _dataService: DataService, private _changeDetector : ChangeDetectorRef)
+  {
+    var promise = this._dataService.getProducts();
+    promise.then(
+      (prod: Product[]) => // success
+      {
+        this.products = prod;
+        _changeDetector.detectChanges();
+      },
+      (errorMessage: string) => // error
+      {
+        alert(errorMessage);
+      }
+    )
   }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
 
 }

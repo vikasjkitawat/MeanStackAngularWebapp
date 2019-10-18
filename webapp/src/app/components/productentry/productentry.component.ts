@@ -1,29 +1,48 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { Product } from '../../models/product';
+import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productentry',
   templateUrl: './productentry.component.html',
   styleUrls: ['./productentry.component.css']
 })
-export class ProductentryComponent implements OnInit {
+export class ProductentryComponent implements OnInit
+{
+  newProduct: Product;
 
-  newProduct : Product;
-  @Output() onProductAdd : EventEmitter<Product>; // Event Payload will be Product type - STEP 1
-
-  constructor() 
-  { 
+  constructor(private _dataService: DataService, private _routerService: Router) 
+  {
     this.newProduct = new Product();
-    this.onProductAdd = new EventEmitter<Product>(); // STEP 2
   }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
 
   saveProduct()
   {
     console.dir(this.newProduct);
-    this.onProductAdd.emit(this.newProduct); //STEP 3 - Raising an Event
+
+    var promise = this._dataService.addProducts(this.newProduct);
+    promise.then(
+      (prod: Product) => // success
+      {
+        console.dir(prod);
+        console.log('new prod id ' + prod.id);
+        this._routerService.navigate([
+          "eshop",
+          "list"
+        ]);
+
+      },
+      (errorMessage: string) => // error
+      {
+        alert(errorMessage);
+      }
+    );
     this.newProduct = new Product();
+
   }
 }

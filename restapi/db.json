@@ -1,40 +1,22 @@
 {
   "products": [
     {
-      "Name": "TEtetet",
-      "Brand": "",
-      "Price": 0,
+      "Name": "Test1",
+      "Brand": "TestBrand1",
+      "Price": 1,
       "id": 1
     },
     {
-      "Name": "123",
-      "Brand": "345",
-      "Price": 12,
-      "id": 2
+      "Name": "Test2",
+      "Brand": "TestBrand2",
+      "Price": 2,
+      "id": 10
     },
     {
-      "Name": "12",
-      "Brand": "23",
-      "Price": 34,
-      "id": 3
-    },
-    {
-      "Name": "kmkl",
-      "Brand": "sdf",
-      "Price": 0,
-      "id": 4
-    },
-    {
-      "Name": "sdfds",
-      "Brand": "sdf",
-      "Price": 0,
-      "id": 5
-    },
-    {
-      "Name": "VIk",
-      "Brand": "App",
-      "Price": 1234,
-      "id": 6
+      "Name": "Test3",
+      "Brand": "Test3",
+      "Price": 3,
+      "id": 11
     }
   ]
 }

@@ -2,9 +2,9 @@
 
 
 <!-- (onProductAdd) tells that it is subscribed to the onProductAdd function and fetch the output value -->
-<app-productentry (onProductAdd)="addProduct($event)"></app-productentry>
+<!-- <app-productentry (onProductAdd)="addProduct($event)"></app-productentry>
 <app-productlist [products]="EShopInventory">
-    <!-- Content Projection -->
+    Content Projection
     <header>
         <h3>
             EShop Inventory Status
@@ -31,4 +31,14 @@
         </h3>
     </div>
 </app-productlist>
+ -->
 
+<div>
+    <ul>
+        <li><a routerLink="list">Available Products</a></li>
+        <li><a routerLink="entry">Product Entry</a></li>
+    </ul>
+</div>
+
+<!-- Second level of router-outlet -->
+<router-outlet></router-outlet>
