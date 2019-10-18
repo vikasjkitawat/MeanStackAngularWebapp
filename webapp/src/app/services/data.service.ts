@@ -8,6 +8,7 @@ export class DataService
 
     ProductInventory: Product[];
     ProductsEndpoint: string;
+    ServiceId : number;
 
     constructor(private httpClient: HttpClient) 
     {
@@ -17,8 +18,14 @@ export class DataService
         this.ProductInventory.push(new Product("Mobiles", "Apple", 50000));
         this.ProductInventory.push(new Product("Laptops", "HP", 75000));
         this.ProductInventory.push(new Product("Desktops", "Dell", 25000));
+        this.ServiceId = Math.random();
     }
 
+    getServiceId() 
+    {
+        return this.ServiceId;
+    }
+    
     getProducts()
     {
         // return this.ProductInventory;

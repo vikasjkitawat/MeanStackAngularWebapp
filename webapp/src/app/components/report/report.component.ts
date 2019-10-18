@@ -1,9 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css'],
+  providers: [DataService],
    // OnPush - Stops automatic change detection. 
    // change detection need to be triggered manually by calling detectChanges() on the change detector object
    // Events (e.g. button click) automatically call detectChanges() internally
@@ -12,6 +14,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
 export class ReportComponent implements OnInit
 {
   cdCount: number;
+
 
   // constructor()
   // {
@@ -27,9 +30,11 @@ export class ReportComponent implements OnInit
   // }
 
   // this._ChangeDetectorRef we forcefully tell the constructor (dependency injection) to update the changes
-  constructor(private _ChangeDetectorRef : ChangeDetectorRef)
+  constructor(private _ChangeDetectorRef : ChangeDetectorRef, private _dataService : DataService)
   {
     this.cdCount = 1;
+    console.log('Report comp : ' + this._dataService.getServiceId());
+
     setInterval(
       ()=>
       {
