@@ -139,3 +139,14 @@ There are three built in structural directives, *NgIf, *NgFor and *NgSwitch.
     A. User Interaction
     B. Programmatically
 5. Loading Placeholder
+
+## Build
+### JIT Build
+Used for creating build with map files and no servers are started
+```npm run build``` 
+
+### AOT Build
+Used for creating build for Prod
+```ng build --aot --prod```
+
+Use Webserver for Chrome

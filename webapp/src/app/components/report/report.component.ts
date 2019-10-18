@@ -65,5 +65,9 @@ export class ReportComponent implements OnInit
   {
     this.updateCDCount();
   }
+  
+  getCount()
+  {
 
+  }
 }
