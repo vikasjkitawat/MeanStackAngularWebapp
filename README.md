@@ -60,7 +60,8 @@ ng generate component components/eshop
 
 ## Monkey Patching
 
-```//http://collabedit.com/9xr4d
+```javascript
+//http://collabedit.com/9xr4d
 
 var fn = document.body.addEventListener;
 
