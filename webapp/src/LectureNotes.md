@@ -62,10 +62,17 @@ Comp C ->
 ## Types of Directives
 ![Types of Directives](NotesImages/TypesOfDirectives.jpg "Types of Directives")
 
-**1. Structural**
+### 1. Structural
 Structural Directives are directives which change the structure of the DOM by adding or removing elements.
 
 There are three built in structural directives, *NgIf, *NgFor and *NgSwitch.
 
-**2. Attribute**
-**3. Component**
+### 2. Attribute
+
+### 3. Component
+
+
+## Creating a Service
+1. Create a data.service.ts
+2. Mark as Injectable
+3. Add to app.module.ts Provider (By default Singleton Per module is created) 

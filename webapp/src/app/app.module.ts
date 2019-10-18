@@ -7,6 +7,8 @@ import { EshopComponent } from './components/eshop/eshop.component';
 import { ProductlistComponent } from './components/productlist/productlist.component';
 import { ProductentryComponent } from './components/productentry/productentry.component';
 import { ReportComponent } from './components/report/report.component';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,9 +20,12 @@ import { ReportComponent } from './components/report/report.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule // required for ngModel
+    FormsModule, // required for ngModel
+    HttpClientModule
   ],
-  //providers: [], // Service Layer
+  providers: [
+    DataService // var singletonInstance = new DataService()
+  ], // Service Layer
   bootstrap: [AppComponent] // new AppComponent()
   //bootstrap: [AppComponent, EshopComponent] // new AppComponent()
 })

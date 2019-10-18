@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "Name": "TEtetet",
+      "Brand": "",
+      "Price": 0,
+      "id": 1
+    },
+    {
+      "Name": "123",
+      "Brand": "345",
+      "Price": 12,
+      "id": 2
+    },
+    {
+      "Name": "12",
+      "Brand": "23",
+      "Price": 34,
+      "id": 3
+    }
+  ]
+}

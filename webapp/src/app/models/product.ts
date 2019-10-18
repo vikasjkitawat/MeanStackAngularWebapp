@@ -6,16 +6,19 @@ export class Product extends BaseModel
     Name : string;
     Brand : string;
     Price : number;
+    id : number;
 
     constructor(
         name : string = "",
         brand : string = "",
-        price : number = 0)
+        price : number = 0,
+        id : number = 0)
     {
         super(); // Call base constructor first
         this.Name = name;
         this.Brand = brand;
         this.Price = price;
+        this.id = 0;
     }
 }
 

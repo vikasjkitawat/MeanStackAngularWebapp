@@ -1,30 +1,53 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { VirtualTimeScheduler } from 'rxjs';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-eshop',
   templateUrl: './eshop.component.html',
   styleUrls: ['./eshop.component.css']
 })
-export class EshopComponent implements OnInit {
+export class EshopComponent implements OnInit
+{
 
-  EShopInventory : Product[];
+  EShopInventory: Product[];
 
-  constructor() {
-    this.EShopInventory =
-      [
-        // mock data
-        new Product("Mobiles", "Apple", 50000),
-        new Product("Laptops", "HP", 75000),
-        new Product("Desktops", "Dell", 25000)
-      ];
+  constructor(private dataService : DataService) // Dependency Injection
+  {
+    
+    // this.EShopInventory =
+    //   [
+    //     // mock data
+    //     new Product("Mobiles", "Apple", 50000),
+    //     new Product("Laptops", "HP", 75000),
+    //     new Product("Desktops", "Dell", 25000)
+    //   ];
+    
+    //OPTION 2: 
+    //this.EShopInventory = dataService.getProducts();
+
+    //OPTION 3: USING REST API
+    this.EShopInventory = [];
+    var promise = dataService.getProducts();
+
+    promise.then(
+      (products : Product[]) => // success
+      {
+        this.EShopInventory = products;
+      },
+      (errorMessage : string) => // error
+      {
+        alert(errorMessage);
+      }
+    )
   }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
 
-  addProduct(newProduct : Product)
+  addProduct(newProduct: Product)
   {
     // this.EShopInventory.push(newProduct);
 
@@ -34,18 +57,27 @@ export class EshopComponent implements OnInit {
 
     // Doing this to change the memory ref which EShopInventory points to
     // Concept of Immutables implemented using ES6 spread operator
-    this.EShopInventory =
-    [
-      ...this.EShopInventory,
-      newProduct
-    ]
+    // this.EShopInventory =
+    //   [
+    //     ...this.EShopInventory,
+    //     newProduct
+    //   ];
 
-    // var newProduct =
-    // [
-    //   ...this.EShopInventory,
-    //   city : ""
-    // ]
-    // newProduct["city"] = 
-  
+      //this.dataService.addProducts(newProduct);
+      //this.EShopInventory = this.dataService.getProducts();
+      //this.EShopInventory=[...this.EShopInventory];
+
+      var promise = this.dataService.addProducts(newProduct);
+
+      promise.then(
+        (updatedProductList : Product[])=> //success
+        {
+          this.EShopInventory = updatedProductList;
+        },
+        (errorMessage : string)=> //error
+        {
+          alert(errorMessage);
+        }
+      )
   }
 }
