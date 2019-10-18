@@ -26,6 +26,26 @@ export class EshopComponent implements OnInit {
 
   addProduct(newProduct : Product)
   {
-    this.EShopInventory.push(newProduct);
+    // this.EShopInventory.push(newProduct);
+
+    // Create a copy of EShopInventory with the new product added
+    // var newArray = [];
+    // this.EShopInventory = newArray.concat(this.EShopInventory, newProduct);
+
+    // Doing this to change the memory ref which EShopInventory points to
+    // Concept of Immutables implemented using ES6 spread operator
+    this.EShopInventory =
+    [
+      ...this.EShopInventory,
+      newProduct
+    ]
+
+    // var newProduct =
+    // [
+    //   ...this.EShopInventory,
+    //   city : ""
+    // ]
+    // newProduct["city"] = 
+  
   }
 }

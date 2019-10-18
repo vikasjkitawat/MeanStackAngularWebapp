@@ -1,10 +1,13 @@
+## Installing Angular CLI
 npm install -g @angular/cli
+
+## Creating a WebApp
 ng new webapp
 
-To start the application
+## Starting application
 npm start
 
-package.json
+## package.json
     - Dependency => Required on the server we host the application
     - DevDependency => Required on the Dev machine
 
@@ -21,7 +24,7 @@ ng generate component components/eshop
 
 ## ngZone
 
-## monkey patching
+## Monkey Patching
 
 ```//http://collabedit.com/9xr4d
 
@@ -44,3 +47,25 @@ document.body.addEventListener(
     );
 
 ```
+
+
+Comp OnPush  with a hierarchy os A > B > C
+Making B as OnPush makes C as OnPush as well
+
+Comp A  -> OnPush
+
+Comp B -> OnPush
+
+Comp C -> 
+
+
+## Types of Directives
+![Types of Directives](NotesImages/TypesOfDirectives.jpg "Types of Directives")
+
+**1. Structural**
+Structural Directives are directives which change the structure of the DOM by adding or removing elements.
+
+There are three built in structural directives, *NgIf, *NgFor and *NgSwitch.
+
+**2. Attribute**
+**3. Component**

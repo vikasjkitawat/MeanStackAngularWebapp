@@ -4,7 +4,10 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush // add this if we want to skip from Change Detection
+   // OnPush - Stops automatic change detection. 
+   // change detection need to be triggered manually by calling detectChanges() on the change detector object
+   // Events (e.g. button click) automatically call detectChanges() internally
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReportComponent implements OnInit
 {
@@ -23,7 +26,7 @@ export class ReportComponent implements OnInit
   //     );
   // }
 
-  // this._ChangeDetectorRef we forcefully tell the contructor (dependency injection) to update the changes
+  // this._ChangeDetectorRef we forcefully tell the constructor (dependency injection) to update the changes
   constructor(private _ChangeDetectorRef : ChangeDetectorRef)
   {
     this.cdCount = 1;
