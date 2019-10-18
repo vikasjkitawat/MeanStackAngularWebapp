@@ -129,4 +129,13 @@ There are three built in structural directives, *NgIf, *NgFor and *NgSwitch.
 
  eshop.component.ts will use ```var promise = dataService.getProducts();``` 
  which will call data.service.ts and check if it is returning resolve or reject of type promise
- 
+
+
+## Routes
+1. Define URLs
+2. Maping URLs to Components
+3. Router Engine
+4. Change of Routes:
+    A. User Interaction
+    B. Programmatically
+5. Loading Placeholder

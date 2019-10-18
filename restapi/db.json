@@ -29,6 +29,12 @@
       "Brand": "sdf",
       "Price": 0,
       "id": 5
+    },
+    {
+      "Name": "VIk",
+      "Brand": "App",
+      "Price": 1234,
+      "id": 6
     }
   ]
 }

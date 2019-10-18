@@ -1,67 +1,13 @@
-<h1 [title]="appDescription"> <!-- Attribute Level Binding -->
-    {{appName}}<!-- Inner HTML -->
-</h1>
-
-<button (click)="handleClick()"> <!-- Event -->
-    Update
-</button>
-<span>
-    {{autoNumber}}
-</span>
-
-<!-- input element -->
+<h1>Angular App</h1>
+<!-- <app-report></app-report>
+<app-eshop></app-eshop> -->
 
 <div>
-    <span>Name: </span>
-    <input type="text" [value]="userName" (input)="handleUserNameChange($event)">
-    <span>Updated Name: {{userName}}</span>
-</div>
-
-
-<!-- Directive => [(ngModel))] -->
-<!-- Need to import in app.module.ts -->
-<!-- Similar to above -->
-<h2>ngModel Directive</h2>
-<div>
-    <span>Name: </span>
-    <input type="text" [(ngModel)]="userName" /> 
-    <span>Updated Name: {{userName}}</span>
-</div>
-
-<!-- [(ngModel)] => value based directive
-*ngFor =>  Structural Directive -->
-<h2>Structural Directive</h2>
-<ul>
-    <li *ngFor="let point of dataPoints">
-        {{point}}
-    </li>
-</ul>
-
-<div *ngIf="dataPoints2.length > 0">
-    <div>
-        <h2>Conditional construct</h2>
-    </div>
-    <!-- Conditional construct -->
     <ul>
-        <li *ngFor="let point of dataPoints2">
-            {{point}}
-        </li>
+        <li><a routerLink="eshop">EShop</a></li>
+        <li><a routerLink="reports">Reports</a></li>
     </ul>
 </div>
 
-
-<div *ngIf="dataPoints.length > 0">
-    <div>
-        <h2>Output</h2>
-    </div>
-    <!-- Conditional construct -->
-    <ul>
-        <li *ngFor="let i = $index">
-            {{i}}
-        </li>
-    </ul>
-</div>
-
-
-<app-report></app-report>
-<app-eshop></app-eshop>
+<!-- The above links will load in the below router-outlet tag -->
+<router-outlet></router-outlet>
