@@ -9,24 +9,22 @@ import { ProductentryComponent } from './components/productentry/productentry.co
 import { ReportComponent } from './components/report/report.component';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from "@angular/common/http";
+import { EShopModule } from './eshop.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EshopComponent,
-    ProductlistComponent,
-    ProductentryComponent,
     ReportComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, // required for ngModel
-    HttpClientModule
+    HttpClientModule,
+    EShopModule // Feature Module
   ],
   providers: [
     DataService // var singletonInstance = new DataService()
   ], // Service Layer
   bootstrap: [AppComponent] // new AppComponent()
-  //bootstrap: [AppComponent, EshopComponent] // new AppComponent()
 })
 export class AppModule { }

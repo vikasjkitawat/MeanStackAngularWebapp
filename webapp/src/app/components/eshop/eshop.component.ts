@@ -7,7 +7,7 @@ import { DataService } from '../../services/data.service';
   selector: 'app-eshop',
   templateUrl: './eshop.component.html',
   styleUrls: ['./eshop.component.css'],
-  providers: [DataService] // this can be set in Module level as well as in app level (app.module.ts)
+  //providers: [DataService] // this can be set in Module level as well as in app level (app.module.ts)
 })
 export class EshopComponent implements OnInit
 {
