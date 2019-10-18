@@ -1,18 +1,12 @@
-import { EshopComponent } from '../components/eshop/eshop.component';
 import { ReportComponent } from '../components/report/report.component';
 
 export const AppRoutes = 
 [
     // http://localhost/
+    // Default
     {
         path : "",
-        component : EshopComponent
-    },
-
-    // http://localhost/eshop
-    {
-        path : "eshop",
-        component : EshopComponent
+        component : ReportComponent
     },
 
     // http://localhost/reports/
@@ -20,4 +14,10 @@ export const AppRoutes =
         path : "reports",
         component : ReportComponent
     },
+
+    {
+        path : "eshop",
+        //loadChildren : ModuleFile Relative Path # ModuleClassName
+        loadChildren : "./eshop.module#EShopModule"
+    }
 ];

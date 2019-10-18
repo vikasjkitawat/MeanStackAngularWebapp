@@ -6,6 +6,8 @@ import { EshopComponent } from './components/eshop/eshop.component';
 import { ProductlistComponent } from './components/productlist/productlist.component';
 import { ProductentryComponent } from './components/productentry/productentry.component';
 import { DataService } from './services/data.service';
+import { RouterModule } from '@angular/router';
+import { EShopRoutes } from './routes/eshop.routes';
 
 // import { BrowserModule } from '@angular/platform-browser';
 // import { FormsModule } from '@angular/forms';
@@ -26,7 +28,8 @@ import { DataService } from './services/data.service';
     imports: [
       CommonModule,
       FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      RouterModule.forChild(EShopRoutes)
     ],
     declarations: [
       EshopComponent,

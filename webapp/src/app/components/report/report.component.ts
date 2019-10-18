@@ -42,7 +42,7 @@ export class ReportComponent implements OnInit
         console.log(this.cdCount);
         this._ChangeDetectorRef.detectChanges();
       },
-      3000 // 3 seconds
+      60000 // 3 seconds
       );
   }
 

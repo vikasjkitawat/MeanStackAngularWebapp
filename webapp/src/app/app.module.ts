@@ -23,7 +23,7 @@ import { AppRoutes } from './routes/app.routes';
     BrowserModule,
     FormsModule, // required for ngModel
     HttpClientModule,
-    EShopModule, // Feature Module
+    //EShopModule, // Feature Module
     RouterModule.forRoot(AppRoutes) // RouterModule > Router Service
   ],
   providers: [
