@@ -7,16 +7,24 @@ router.get(
     "/",
     function homeGet(req, res, next)
     {
-        res.end("Home");
+        //res.end("Home");
+
+        //Type 1
+        //res.render("home");
+
+        //Type 2
+        //res.status(200).render("home");
+
+        //Type 3
+        res
+            .status(200)
+            .render(
+                "home", // view
+                { // Model in MVC
+                    time: new Date().toLocaleTimeString()
+                });
     }
 );
 
-router.get(
-    "/res",
-    function homeGet(req, res, next)
-    {
-        res.end("res");
-    }
-)
 
 module.exports = router;
