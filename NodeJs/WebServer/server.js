@@ -5,6 +5,8 @@ const path = require("path");
 const homeController = require("./controllers/home");
 const reportsController = require("./controllers/reports");
 
+const htmlController = require("./controllers/htmlController");
+
 
 var httpServer = http.createServer(
     function httpHandler(request, response, next) // called for all incoming requests
@@ -12,20 +14,12 @@ var httpServer = http.createServer(
         try
         {
             var url = request.url;
-            console.log(url);
-
-            if (url == "/" || url == "/home")
+            console.log("URL Connection is : " + request.url);
+            if(request.url == "/" || request.url=="") 
             {
-                homeController(request, response);
+                request.url="/home";
             }
-            else if (url == "/reports")
-            {
-                reportsController(request, response);
-            }
-            else // 404
-            {
-                response.writeHead(404, {});
-            }
+            htmlController(request,response);
         }
         catch (ex)
         {
