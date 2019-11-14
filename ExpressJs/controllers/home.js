@@ -4,7 +4,7 @@ const router = require("express").Router();
 // http://localhost:90/ and HTTP GET
 
 router.get(
-    "/",
+    "/", // sub route
     function homeGet(req, res, next)
     {
         //res.end("Home");
