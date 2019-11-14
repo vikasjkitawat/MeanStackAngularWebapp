@@ -47,3 +47,18 @@ promise.then(
         console.log(errorMessage);
     }
 );
+
+// ReadFileAsyncWithBuiltInPromiseAPI
+var promise2 = fileIo.readFileAsyncWithBuiltInPromiseAPI("sample.txt");
+promise2.then(
+    function onComplete(fileData)
+    {
+        console.log("\n readFileAsyncWithBuiltInPromiseAPI: \n");
+        console.log(fileData);
+    },
+    function onError(errorMessage)
+    {
+        console.log("readFileAsyncWithBuiltInPromiseAPI Read Failed: \n");
+        console.log(errorMessage);
+    }
+);

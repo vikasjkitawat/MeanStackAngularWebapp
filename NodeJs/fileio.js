@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const fsPromise = fs.promises;
 
 function ReadFile(filePath)
 {
@@ -53,12 +54,35 @@ function ReadFileAsyncWithPromise (filePath)
     );
 
     return promise;
-    
+}
+
+function ReadFileAsyncWithBuiltInPromiseAPI(filePath)
+{
+    var promise = new Promise(function onThen(resolve, reject)
+    {
+        var readFilePromise = fsPromise.readFile( path.join(__dirname, filePath),
+        "UTF-8", // File Encoding
+        );
+
+        readFilePromise.then(
+            function success(data){
+                resolve(data);
+            },
+            function error(err)
+            {
+                console.log(err);
+                reject("File IO Failed");
+            }
+        );
+    });
+
+    return promise;
 }
 
 module.exports =
     {
         readSync: ReadFile,
         readAsync: ReadFileAsync,
-        readAsyncWithPromise: ReadFileAsyncWithPromise
+        readAsyncWithPromise: ReadFileAsyncWithPromise,
+        readFileAsyncWithBuiltInPromiseAPI : ReadFileAsyncWithBuiltInPromiseAPI
     };
