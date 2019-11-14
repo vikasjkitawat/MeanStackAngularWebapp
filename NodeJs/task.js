@@ -23,3 +23,16 @@ function funcType3()
 }
 
 module.exports.run3app = funcType3;
+
+// User Class
+function UserClassFunction(user)
+{
+    log(user.name);
+}
+
+function log(param)
+{
+    console.log("App Started for " + param)
+}
+
+module.exports.UserClassFunction = UserClassFunction;
