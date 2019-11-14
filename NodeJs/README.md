@@ -91,3 +91,10 @@ restart in case of crashes
 ### Starting Node Mon
 ```nodemon server.js```
 
+### Autostart NodeMon
+Change package.json
+```json
+"scripts": {
+    "start" : "nodemon server.js"
+  },
+```
