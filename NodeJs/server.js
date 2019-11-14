@@ -62,3 +62,25 @@ promise2.then(
         console.log(errorMessage);
     }
 );
+
+// Work directly with fs promise API
+const fs = require("fs").promises;
+const path = require("path");
+
+var promise3 = fs.readFile(
+    path.join(__dirname, "sample.txt"),
+    "UTF-8", // File Encoding
+);
+
+promise3.then(
+    function success(fileData)
+    {
+        console.log("\n Work directly with fs promise API: \n");
+        console.log(fileData);
+    },
+    function error(errorMessage)
+    {
+        console.log("Work directly with fs promise API Read Failed: \n");
+        console.log(errorMessage);
+    }
+);
