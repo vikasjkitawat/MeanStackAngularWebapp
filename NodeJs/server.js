@@ -84,3 +84,34 @@ promise3.then(
         console.log(errorMessage);
     }
 );
+
+
+//
+
+async function AsyncAwaitRun()
+{
+    try
+    {
+        console.log("Async await start - File 1");
+        var data = await fs.readFile(
+            path.join(__dirname, "sample.txt"),
+            "UTF-8", // File Encoding
+        );
+        console.log(data);
+        console.log("Async await end - File 1");
+
+        console.log("Async await start - File 2");
+        var data2 = await fs.readFile(
+            path.join(__dirname, "sample2.txt"),
+            "UTF-8", // File Encoding
+        );
+        console.log(data2);
+        console.log("Async await end - File 2");
+    }
+    catch (ex)
+    {
+        console.log(ex);
+    }
+}
+
+AsyncAwaitRun();
