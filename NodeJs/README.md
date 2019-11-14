@@ -98,3 +98,6 @@ Change package.json
     "start" : "nodemon server.js"
   },
 ```
+
+## File IO
+Default is Async file IO type
