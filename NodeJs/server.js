@@ -7,7 +7,7 @@ t1.run3app(); // Type 3
 
 // User Class
 const User = require("./models/User")
-var user = new User("TestUser", 30);
+var user = new User("TestUser1", 30);
 
 console.log(user.name);
 console.log(user.age);

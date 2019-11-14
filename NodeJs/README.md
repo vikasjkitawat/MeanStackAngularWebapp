@@ -43,7 +43,8 @@ function Run()
 {
     console.log("funcType1 Called");
 }
-Run();```
+Run();
+```
 
 ### Executing project
 ```node server.js```
@@ -75,5 +76,18 @@ function funcType3()
     console.log("funcType3 Called");
 }
 
-module.exports.run3app = funcType3;```
+module.exports.run3app = funcType3;
+```
+
+
+## Node Monitor - NodeMon
+Monitor code, start and stop the server
+restart in case of crashes
+
+### Installing NodeMon Globally
+
+```npm install -g nodemon```
+
+### Starting Node Mon
+```nodemon server.js```
 
