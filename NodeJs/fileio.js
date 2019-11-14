@@ -9,7 +9,7 @@ function ReadFile(filePath)
 }
 
 function ReadFileAsync(filePath, success, failure)
-{
+{    
     fs.readFile(
         path.join(__dirname, filePath),
         "UTF-8", // File Encoding
@@ -28,8 +28,37 @@ function ReadFileAsync(filePath, success, failure)
     )
 }
 
+function ReadFileAsyncWithPromise (filePath)
+{    
+    var promise = new Promise(
+        function onThen(resolve, reject)
+        {
+            fs.readFile(
+                path.join(__dirname, filePath),
+                "UTF-8", // File Encoding
+                function onReadComplete(error, data) // call back
+                {
+                    if (error)
+                    {
+                        reject(error);
+                    }
+                    else // Success
+                    {
+                        // send data to server.js
+                        resolve(data);
+                    }
+                }
+            )
+        }
+    );
+
+    return promise;
+    
+}
+
 module.exports =
     {
         readSync: ReadFile,
-        readAsync: ReadFileAsync
+        readAsync: ReadFileAsync,
+        readAsyncWithPromise: ReadFileAsyncWithPromise
     };

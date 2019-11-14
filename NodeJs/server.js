@@ -32,3 +32,18 @@ fileIo.readAsync(
         console.log(errorMessage);
     }
 );
+
+// File IO with Promise
+var promise = fileIo.readAsyncWithPromise("sample.txt");
+promise.then(
+    function onComplete(fileData)
+    {
+        console.log("\nAsyncWithPromise: \n");
+        console.log(fileData);
+    },
+    function onError(errorMessage)
+    {
+        console.log("AsyncWithPromise Read Failed: \n");
+        console.log(errorMessage);
+    }
+);
