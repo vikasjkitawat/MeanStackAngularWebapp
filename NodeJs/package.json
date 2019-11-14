@@ -1,0 +1,11 @@
+{
+  "name": "appserver",
+  "version": "1.0.0",
+  "description": "1. NodeJS: node -v: 10.x / 12.x\r 2. VS.Code\r 3. Chrome\r 4. MongoDB Server\r 5. Mongo Compass (GUI)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
