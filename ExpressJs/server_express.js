@@ -1,10 +1,10 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const serveFavicon = require("serve-favicon");
 const http = require("http");
 
 const expressServer = express();
+
+const middleware = require("./middlewares");
+middleware.configure(expressServer);
 
 const webServer = http.createServer(expressServer);
 
