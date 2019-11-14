@@ -25,4 +25,4 @@ class ObservableCollection extends events.EventEmitter
     }
 }
 
-module.exports = ObservableCollection; //Export the Observable Class
+module.exports = ObservableCollection; // Export the Observable Class
