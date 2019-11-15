@@ -119,3 +119,9 @@ function setupCluster()
 }
 
 ```
+
+## Load Testing
+```npm install -g node-ab```
+
+## Executing 
+```nab http://localhost:90```

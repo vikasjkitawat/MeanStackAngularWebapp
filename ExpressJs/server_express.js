@@ -15,7 +15,8 @@ expressServer.use(
     "", // this pattern means any routes
     function (req, res, next)
     {
-        console.log(req.url + ":" + req.method + " at " + new Date().toLocaleTimeString());
+        const processId = process.pid;
+        console.log(processId + " : " + req.url + " : " + req.method + " at " + new Date().toLocaleTimeString());
         next(); // this is required as if it is not there then it will not go forward
     }
 );
@@ -26,7 +27,7 @@ routes.configure(expressServer);
 apiRoutes.configure(expressServer);
 
 
-//Custom Middleware - Logging - Before
+//Custom Middleware - Logging - After
 expressServer.use(
     "", // this pattern means any routes
     function (req, res, next)
