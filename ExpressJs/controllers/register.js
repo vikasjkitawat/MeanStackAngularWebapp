@@ -26,6 +26,7 @@ router.post(
         console.log(user);
 
         res.end(user.name + ", you are registered");
+        next();
     }
 );
 

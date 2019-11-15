@@ -34,15 +34,14 @@ router.get(
 
             res.end(reportData);
 
+            next();
             
         }
         else
-        {
-            res.status(404).end("No Report Found")
-        }
-        res.end("Report for " + req.params.id);
-
-        next();
+        {            
+            console.log("404 - No Report found");            
+            next("No Report found for id = " + req.params.id);
+        }       
     }
 );
 
