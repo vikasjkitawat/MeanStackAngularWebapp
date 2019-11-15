@@ -1,0 +1,26 @@
+<!-- <ng-content></ng-content> -->
+<!--  path : "list",
+                component : ProductlistComponent -->
+<h3>Test</h3>
+<table *ngIf="products.length > 0">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Brand</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.Name}}</td>
+            <td>{{product.Brand}}</td>
+            <td>{{product.Price}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- <ng-content select="footer"></ng-content>
+<ng-content select="div[id='div1']"></ng-content>
+<ng-content select="div[id='div2']"></ng-content>
+<ng-content select="div[id='div3']"></ng-content> -->

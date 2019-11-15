@@ -1,0 +1,36 @@
+<h2>Product Entry</h2>
+<form>
+    <!-- <div>
+        <span>Name</span>
+        <input type="text" name="Name" [(ngModel)]="newProduct.Name">
+    </div>
+    <div>
+        <span>Brand</span>
+        <input type="text" name="Brand" [(ngModel)]="newProduct.Brand">
+    </div>
+    <div>
+        <span>Price</span>
+        <input type="number" name="Price" [(ngModel)]="newProduct.Price">
+    </div>
+    <div>
+        <input type="button" value="Save"/>
+    </div> -->
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="Name" [(ngModel)]="newProduct.Name"></td>
+        </tr>
+        <tr>
+            <td>Brand</td>
+            <td><input type="text" name="Brand" [(ngModel)]="newProduct.Brand"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="number" name="Price" [(ngModel)]="newProduct.Price"></td>
+        </tr>
+
+    </table>
+    <div>
+        <input type="button" value="Save" (click)="saveProduct()"/>
+    </div>
+</form>
