@@ -1,21 +1,24 @@
 const router = require("express").Router();
+const mongoService = require("../services/mongoService")
 
 router.get(
     "/",
-    function productsGet(req,res,next)
-    {
-        //TODO
-        res.end("products.get");
+    async function productsGet(req,res,next)
+    {        
+        var data = await mongoService.getData("MEAN","products",{});
+        res.end(JSON.stringify(data));
+        next();
     }
 )
 
 router.post(
     "/",
-    function productsPost(req,res,next)
+    async function productsPost(req,res,next)
     {
-        //TODO
-        console.log(req.body)
-        res.end("products.post");
+        var data = req.body;
+        var newProductId = await mongoService.addData("MEAN","products", data);
+        res.status(201).end(newProductId);        
+        next();
     }
 )
 
@@ -23,21 +26,25 @@ router.post(
 //HTTP PUT
 router.put(
     "/:productId",
-    function productsPut(req,res,next)
+    async function productsPut(req,res,next)
     {
-        //TODO
-        console.log(req.body)
-        res.end("products.put : "  + req.params.productId);
+        var productId = req.params.productId;
+        var data = req.body;
+        await mongoService.updateData("MEAN","products", productId, data);
+        res.status(200).end();
+        next();
     }
 )
 
 //http://localhost:90/api/products/123
 router.delete(
     "/:productId",
-    function productsDelete(req,res,next)
+    async function productsDelete(req,res,next)
     {
-        //TODO
-        res.end("products.delete : "  + req.params.productId);
+        var productId = req.params.productId;
+        var response = await mongoService.deleteData("MEAN","products", productId);
+        res.status(200).end();
+        next();
     }
 )
 

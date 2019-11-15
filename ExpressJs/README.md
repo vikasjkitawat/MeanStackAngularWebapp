@@ -35,3 +35,7 @@ NPM Version NPM Downloads Build Status Test Coverage
 HTTP request logger middleware for node.js
 
 Named after Dexter, a show you should not watch until completion.
+
+## Mongo DB
+### Installing Mongo using NPM
+npm install --save mongodb
