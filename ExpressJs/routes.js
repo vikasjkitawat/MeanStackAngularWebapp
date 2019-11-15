@@ -5,16 +5,7 @@ const reportsController = require("./controllers/reports");
 
 function configure(expressServer) 
 {
-    //Custom Middleware
-    // PRE
-    expressServer.use(
-        "", // this pattern means any routes
-        function (req, res, next)
-        {
-            console.log(req.url + ":" + req.method + " at " + new Date().toLocaleTimeString());
-            next(); // this is required as if it is not there then it will not go forward
-        }
-    );
+    
 
     expressServer.use("/", homeController);
     expressServer.use("/register", registerController);
@@ -22,15 +13,6 @@ function configure(expressServer)
 
     expressServer.use("/reports", reportsController);
 
-    //Custom Middleware
-    // PRE
-    expressServer.use(
-        "", // this pattern means any routes
-        function (req, res, next)
-        {
-            console.log(req.url + ":" + req.method + " ended at " + new Date().toLocaleTimeString());
-        }
-    );
 }
 
 
