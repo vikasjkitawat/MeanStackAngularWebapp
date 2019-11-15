@@ -13,6 +13,7 @@ router.get(
                 "subscribe", // view
                 { // Model in MVC
                 });
+        next();
     }
 );
 
@@ -26,6 +27,7 @@ router.post(
         var user = req.body;
         console.log(user);
         res.end(user.name + ", you are registered")
+        next();
     }
 );
 

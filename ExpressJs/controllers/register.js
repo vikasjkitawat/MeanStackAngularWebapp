@@ -13,6 +13,7 @@ router.get(
                 "register", // view
                 { // Model in MVC
                 });
+        next();
     }
 );
 

@@ -23,6 +23,8 @@ router.get(
                 { // Model in MVC
                     time: new Date().toLocaleTimeString()
                 });
+
+        next();
     }
 );
 

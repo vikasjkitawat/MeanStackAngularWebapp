@@ -33,12 +33,16 @@ router.get(
             res.setHeader("Content-Type", "application/pdf");
 
             res.end(reportData);
+
+            
         }
         else
         {
             res.status(404).end("No Report Found")
         }
         res.end("Report for " + req.params.id);
+
+        next();
     }
 );
 
@@ -56,6 +60,7 @@ router.get(
                 { // Model in MVC
                     
                 });
+        next();
     }
 );
 
