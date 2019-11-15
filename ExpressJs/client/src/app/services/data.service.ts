@@ -12,7 +12,7 @@ export class DataService
 
     constructor(private httpClient: HttpClient) 
     {
-        this.ProductsEndpoint = "http://localhost:5000/products"
+        this.ProductsEndpoint = "http://localhost:90/api/products"
 
         this.ProductInventory = [];
         this.ProductInventory.push(new Product("Mobiles", "Apple", 50000));
@@ -89,7 +89,7 @@ export class DataService
 
                 var observable = this.httpClient.post(
                     this.ProductsEndpoint, //URL
-                    newProduct,  // Posted data
+                    newProduct.prep(),  // Posted data
                     {
                         headers: requestHeaders
                     });

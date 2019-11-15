@@ -16,10 +16,13 @@ function configure(expressServer)
     expressServer.use("/reports", reportsController);
     expressServer.use("/app", appController);
 
+    expressServer.use("/app/*", appController);
+
 }
 
 
 module.exports = {
     configure: configure
 }
+
 

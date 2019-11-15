@@ -84,7 +84,7 @@ function addDataToCollection(dbName="",collectionName="",data)
                 
                 //resolve(result); // this will return complete object
 
-                resolve(result.ops[0]._id.toString());
+                resolve(result.ops[0]);
             }
             catch(ex)
             {

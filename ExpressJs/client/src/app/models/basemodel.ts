@@ -8,4 +8,10 @@ export class BaseModel
     {
         return JSON.stringify(this);
     }
+
+    prep()
+    {
+        delete this["_id"];
+        return this;
+    }
 }

@@ -16,8 +16,9 @@ router.post(
     async function productsPost(req,res,next)
     {
         var data = req.body;
-        var newProductId = await mongoService.addData("MEAN","products", data);
-        res.status(201).end(newProductId);        
+        var newProduct = await mongoService.addData("MEAN","products", data);
+        res.setHeader("Content-Type", "application/json");
+        res.status(201).end(JSON.stringify(newProduct));
         next();
     }
 )

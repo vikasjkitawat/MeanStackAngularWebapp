@@ -30,7 +30,7 @@ export class ProductentryComponent implements OnInit
       (prod: Product) => // success
       {
         console.dir(prod);
-        console.log('new prod id ' + prod.id);
+        console.log('new prod id ' + prod._id);
         this._routerService.navigate([
           "eshop",
           "list"
