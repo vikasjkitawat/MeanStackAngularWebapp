@@ -40,3 +40,13 @@ Named after Dexter, a show you should not watch until completion.
 
 ### Installing Mongo using NPM
 ```npm install --save mongodb```
+
+
+## Integrating Angular project to Express
+Copy complete web project in client folder 
+
+### To Run Angular Build
+```npm run build```
+
+### To Run Express
+```npm start```
