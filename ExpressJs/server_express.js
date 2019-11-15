@@ -61,16 +61,17 @@ expressServer.set(
     "ejs" // ejs = Embedded Javascript - Other view engine options jade and 
     );
 
-const webServer = http.createServer(expressServer);
+// const webServer = http.createServer(expressServer);
 
-webServer.listen(
-    90,
-    function onStart() 
-    {
-        console.log("Server Started");
-    }
-)
+// webServer.listen(
+//     90,
+//     function onStart() 
+//     {
+//         console.log("Server Started");
+//     }
+// )
 
+module.exports = expressServer;
 
 //http://localhost:90/products
 //GET

@@ -50,3 +50,72 @@ Copy complete web project in client folder
 
 ### To Run Express
 ```npm start```
+
+## Process
+ExpressJS\server.js will be used for scaling
+
+```javascript
+const cluster = require('cluster');
+const express = require('express');
+
+if(cluster.isMaster) 
+{
+    setupMaster();  
+} 
+else 
+{
+    setupCluster();
+}
+
+function setupMaster()
+{
+    var cpuCount = require('os').cpus().length;
+    console.log("Number of CPU Cores available: " + cpuCount + " cores");
+
+    for(var count = 0; count < cpuCount; count++) 
+    {
+        cluster.fork();
+    }
+
+    cluster.on(
+        'online', 
+        function(worker) 
+        {
+            console.log('Worker ' + worker.process.pid + ' is online');
+        }
+    );
+
+    cluster.on(
+        'exit', 
+        function(worker, code, signal) 
+        {
+            console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
+            console.log('Starting a new worker');
+        }
+    );
+}
+
+function setupCluster()
+{
+    var expressServer = express();
+    
+    expressServer.use(
+        "/", 
+        function(req, res) 
+        {
+            var response = 'You have been served by process ' + process.pid;
+            console.log(response);
+            res.end(response);
+        }
+    )
+
+    expressServer.listen(
+        80, 
+        function() 
+        {
+            console.log('Process ' + process.pid + ' is listening to all incoming requests');
+        }
+    );
+}
+
+```
